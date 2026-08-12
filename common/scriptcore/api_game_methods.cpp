@@ -1324,7 +1324,8 @@ int api_methods_unit_type_veteran_level_max_get(lua_State *L,
 /**
  * Return true if the unit class has the given unit class flag.
  */
-bool api_methods_unit_class_has_flag(lua_State *L, Unit_Class *punit_class,
+bool api_methods_unit_class_has_flag(lua_State *L,
+                                     const Unit_Class *punit_class,
                                      const char *flag)
 {
   LUASCRIPT_CHECK_STATE(L, false);
@@ -1344,7 +1345,7 @@ bool api_methods_unit_class_has_flag(lua_State *L, Unit_Class *punit_class,
  * Return the rule name of the unit class.
  */
 const char *api_methods_unit_class_rule_name(lua_State *L,
-                                             Unit_Class *punit_class)
+                                             const Unit_Class *punit_class)
 {
   LUASCRIPT_CHECK_STATE(L, nullptr);
   LUASCRIPT_CHECK_SELF(L, punit_class, nullptr);
@@ -1354,8 +1355,9 @@ const char *api_methods_unit_class_rule_name(lua_State *L,
 /**
  * Return the translated name of the unit class.
  */
-const char *api_methods_unit_class_name_translation(lua_State *L,
-                                                    Unit_Class *punit_class)
+const char *
+api_methods_unit_class_name_translation(lua_State *L,
+                                        const Unit_Class *punit_class)
 {
   LUASCRIPT_CHECK_STATE(L, nullptr);
   LUASCRIPT_CHECK_SELF(L, punit_class, nullptr);
